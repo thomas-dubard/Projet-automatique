@@ -30,27 +30,19 @@ epsilon2 = 10;
 Td2 = 1e-2;
 mul = 1.1;
 
-d1amp = 0;
-d2amp = -0.0;
-
-a1 = 80;
-a2 = 60;
-a3 = 200;
+a1 = sqrt(6);
+a2 = sqrt(6);
+a3 = 1;
 
 kn2 = a1;
 k2 = -(a1*b*b*NBar + a3)/(b*(1 - c*hBar));
 kd2 = -(b*c*NBar + a2)/(b*(1 - c*hBar));
 kr2 = k2 + (kn2 * c * NBar) / (1 - c * hBar);
 
-if (kn2<0);
-    disp(1);
-end;
-if (kd2*kn2>k2);
-    disp(2);
-end;
-if (k2/kn2>-c*NBar/(1-c*hBar));
-    disp(3)
-end;
+if (kn2<0): ((kd2*kn2>k2) or (k2/kn2>-c*NBar/(1-c*hBar)))
+    print("bad");
+else;
+    print("good");
 
 A2 = - 1 / (epsilon2 * Td2);
 B2 = [ 1/(epsilon2 * Td2) 0 0];
