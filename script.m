@@ -30,8 +30,8 @@ epsilon2 = 10;
 Td2 = 1e-2;
 mul = 1.1;
 
-d1amp = 0;
-d2amp = -0.0;
+d1amp = -0.02;
+d2amp = 0.04;
 
 a1 = 80;
 a2 = 60;
